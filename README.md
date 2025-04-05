@@ -1,4 +1,4 @@
-# 🕹️ wikiCraft: Gamified Onboarding for Enhanced Contribution.
+# 🕹️ WikiCraft: Gamified Onboarding for Enhanced Contribution.
 
 Welcome to **WikiQuest**, a pixel-art styled, interactive learning platform designed to onboard new Wikipedia editors in a fun, friendly, and error-proof way.
 
