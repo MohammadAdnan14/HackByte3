@@ -1,9 +1,54 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import morningImage from "../assets/morning.jpg";
+import afternoonImage from "../assets/afternoon.jpg";
+import nightImage from "../assets/night.jpg";
+import eveningImage from "../assets/evening.jpg";
+
 
 const Dashboard = () => {
+    const [greeting, setGreeting] = useState("Good Morning");
+    
+
+    useEffect(() => {
+        const updateGreeting = () => {
+            const currentHour = new Date().getHours();
+    
+            if(currentHour >= 5 && currentHour < 12) {
+                setGreeting("Morning");
+            } else if(currentHour >= 12 && currentHour < 17){
+                setGreeting("Afternoon");
+            } else if(currentHour >= 17 && currentHour < 21){
+                setGreeting("Evening");
+            } else {
+                setGreeting("Night");
+            }
+        };
+    
+        updateGreeting();
+        const interval = setInterval(updateGreeting, 1000*60);
+        return () => clearInterval(interval);
+    
+    }, []);
+    
+    const getBackgroundImage = () => {
+        switch(greeting) {
+            case "Morning":
+                return morningImage;
+            case "Afternoon":
+                return afternoonImage;
+            case "Evening":
+                return eveningImage;
+            case "Night":
+                return nightImage;
+            default:
+                return morningImage;
+        }
+    };
+
+
     return(
         <div className="flex h-[100vh] flex-col text-white bg-black">
-            <section className="flex">
+            <section className="flex gap-10">
                 <nav className="flex flex-col justify-start top-0 left-0 w-96 h-[90vh] bg-white text-black m-10 rounded-3xl">
                     
                     <div className="flex flex-col items-center justify-center gap-10">
@@ -31,10 +76,19 @@ const Dashboard = () => {
                         <p className="bottom-20 absolute">Settings</p>
                     </div>
                 </nav>
-
-                <div className="flex flex-col justify-center items-center w-96 h-40 bg-[#271b3d]">
-                    <div>
-
+                
+                <div className="flex flex-col">
+                    <div className="flex text-xl justify-center items-center gap-10 pt-5 pl-5 right-0 absolute">
+                        <p>{new Date().toLocaleDateString('en-US', { weekday: 'long' })}</p>
+                        <p>{new Date().toLocaleDateString()}</p>
+                        <p>{new Date().toLocaleTimeString()}</p>
+                    </div>
+                    
+                    <div className="flex flex-col justify-center items-center mt-20 w-6xl h-48 rounded-4xl bg-[#bebebe]">
+                        <div className="flex flex-col justify-center items-center h-48 w-6xl bg-[#D9D9D9] dark:bg-[#3F3F3F] rounded-[17px] bg-cover bg-center" style={{backgroundImage: `url(${getBackgroundImage()})`,}}>
+                            <p className="text-6xl text-white font-bold">Good {greeting},</p>
+                            <p className="text-xl px-3 text-white">user</p>
+                        </div>
                     </div>
                 </div>
             </section>
