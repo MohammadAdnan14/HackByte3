@@ -18,7 +18,7 @@ const Landing = () => {
                 </div>
 
                 <div>
-                    <button className="h-12 w-32 text-xl mr-10 bg-[#31314f] cursor-pointer"><Link to={"/dashboard"}>Get Started</Link></button>
+                    <button className="h-12 w-32 text-xl mr-10 bg-[#31314f] cursor-pointer"><Link to={"/signin"}>Get Started</Link></button>
                 </div>
             </div>
 
