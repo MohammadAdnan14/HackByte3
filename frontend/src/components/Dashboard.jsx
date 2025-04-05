@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
-import morningImage from "../assets/morning.jpg";
-import afternoonImage from "../assets/afternoon.jpg";
-import nightImage from "../assets/night.jpg";
-import eveningImage from "../assets/evening.jpg";
+import morningImage from "../assets/Morning.jpg";
+import afternoonImage from "../assets/Afternoon.jpg";
+import nightImage from "../assets/Night.jpg";
+import eveningImage from "../assets/Evening.jpg";
 
 
 const Dashboard = () => {
