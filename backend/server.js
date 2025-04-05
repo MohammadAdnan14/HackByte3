@@ -4,32 +4,33 @@ const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 const path = require('path');
 
-// Load env vars
+// Load environment variables
 require('dotenv').config();
 
-// Connect to database
+// Connect to MongoDB
 connectDB();
 
 const app = express();
 
-// Body parser
+// Parse incoming JSON requests
 app.use(express.json());
 
-// Enable CORS
+// Enable Cross-Origin Resource Sharing
 app.use(cors());
 
-// Static folder for uploads
+// Serve static files from /uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Mount routers
+// API routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/users', require('./routes/users'));
 
-// Error handler
+// Error handling middleware
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
+// Start server
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
@@ -37,6 +38,5 @@ const server = app.listen(PORT, () => {
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err) => {
   console.log(`Error: ${err.message}`);
-  // Close server & exit process
   server.close(() => process.exit(1));
 });

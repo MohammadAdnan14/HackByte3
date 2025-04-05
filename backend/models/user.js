@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+// Define User schema
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -22,7 +23,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please add a password'],
     minlength: [6, 'Password must be at least 6 characters'],
-    select: false
+    select: false // exclude from query results by default
   },
   profileImage: {
     type: String,
@@ -46,7 +47,7 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-// Encrypt password using bcrypt
+// Hash password before saving user
 UserSchema.pre('save', async function(next) {
   if (!this.isModified('password')) {
     next();
@@ -56,7 +57,7 @@ UserSchema.pre('save', async function(next) {
   this.password = await bcrypt.hash(this.password, salt);
 });
 
-// Sign JWT and return
+// Generate signed JWT token
 UserSchema.methods.getSignedJwtToken = function() {
   return jwt.sign(
     { id: this._id },
@@ -65,11 +66,11 @@ UserSchema.methods.getSignedJwtToken = function() {
   );
 };
 
-// Match user entered password to hashed password in database
+// Compare entered password with hashed one
 UserSchema.methods.matchPassword = async function(enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-
+// Export User model
 const User = mongoose.models.User || mongoose.model('User', UserSchema);
 module.exports = User;

@@ -8,10 +8,15 @@ const {
 const router = express.Router();
 
 const { protect } = require('../middleware/auth');
-const { uploadProfileImage } = require('../middleware/upload');
+// const { uploadProfileImage } = require('../middleware/upload');
 
-router.put('/profile', protect, uploadProfileImage, updateProfile);
+// Update user profile with optional image upload (commented out)
+// router.put('/profile', protect, uploadProfileImage, updateProfile);
+
+// Update user level (protected route)
 router.put('/level', protect, updateLevel);
+
+// Update user hearts (protected route)
 router.put('/hearts', protect, updateHearts);
 
 module.exports = router;

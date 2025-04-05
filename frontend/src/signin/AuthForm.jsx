@@ -70,6 +70,34 @@ import React, { useState } from 'react';
 function AuthForm() {
   const [activeTab, setActiveTab] = useState('login');
 
+  const handleSignup = async (e) => {
+    e.preventDefault();
+  
+    const name = e.target.name?.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+  
+    try {
+      const res = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+  
+      const data = await res.json();
+      if (res.ok) {
+        alert('Signup successful!');
+      } else {
+        alert(data.message || 'Signup failed');
+      }
+    } catch (err) {
+      console.error('Error:', err);
+      alert('Something went wrong');
+    }
+  };
+
   return (
     <div className="auth-container">
       <div className="auth-box">
@@ -92,19 +120,19 @@ function AuthForm() {
             </button>
           </div>
 
-          <form className="auth-form">
+          <form className="auth-form" onSubmit={activeTab === 'signup' ? handleSignup : undefined}>
             {activeTab === 'signup' && (
               <>
                 <label>Name</label>
-                <input type="text" placeholder="Your name" />
+                <input type="text" name="name" placeholder="Your name" />
               </>
             )}
 
             <label>Email</label>
-            <input type="email" placeholder="m@example.com" />
+            <input type="email" name="email" placeholder="m@example.com" />
 
             <label>Password</label>
-            <input type="password" placeholder="••••••••" />
+            <input type="password" name= "password" placeholder="••••••••" />
 
             {activeTab === 'login' && <a href="#">Forgot password?</a>}
 
