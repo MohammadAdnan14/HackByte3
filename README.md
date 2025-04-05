@@ -83,8 +83,6 @@ git clone https://github.com/MohammadAdnan14/HackByte3
 cd wikiquest
 ```
 
----
-
 ### 2. Install dependencies
 
 ```bash
