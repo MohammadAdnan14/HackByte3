@@ -58,11 +58,6 @@ Each module is broken into levels and ends with a quiz:
 
 ---
 
-## 📦 Folder Structure
-📁 wikiquest/ ├── 📁 public/ ├── 📁 src/ │ ├── 📁 assets/ │ ├── 📁 components/ │ ├── 📁 pages/ │ ├── 📁 modules/ # All 7 modules and levels inside │ ├── 📁 context/ # Auth and XP management │ └── App.jsx ├── tailwind.config.js ├── package.json └── README.md
-
----
-
 ## 🧙 Getting Started
 
 ### 1. Clone the repository
