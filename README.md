@@ -81,3 +81,18 @@ Each module is broken into levels and ends with a quiz:
 ```bash
 git clone https://github.com/MohammadAdnan14/HackByte3
 cd wikiquest
+```
+
+---
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the app
+
+```bash
+npm run dev
+```
