@@ -48,29 +48,18 @@ Each module is broken into levels and ends with a quiz:
 ## 🛠️ Tech Stack
 
 - **Frontend:** React.js + TailwindCSS  
-- **State Management:** React Context / Zustand  
+- **State Management:** React Context
 - **Routing:** React Router  
 - **Animations:** Framer Motion  
-- **Authentication:** Firebase Auth or Supabase (planned)  
-- **Backend:** FastAPI / Node.js (planned)  
-- **Database:** PostgreSQL / MongoDB (planned)  
-- **Hosting:** Vercel / Netlify  
-- **Design:** Pixel Art (custom & sourced from GameBoy-style assets)
+- **Authentication:** JWT using MongoDB  
+- **Backend:** Node.js
+- **Database:** MongoDB
+- **Hosting:** Vercel
 
 ---
 
 ## 📦 Folder Structure
-
-
----
-
-## 🧪 Judging Criteria (Hackathon)
-
-| Criteria                         | Score (0–10) |
-|----------------------------------|--------------|
-| Ease of User Experience          | ✅            |
-| Clarity of Information Presented | ✅            |
-| Code Quality                     | ✅            |
+📁 wikiquest/ ├── 📁 public/ ├── 📁 src/ │ ├── 📁 assets/ │ ├── 📁 components/ │ ├── 📁 pages/ │ ├── 📁 modules/ # All 7 modules and levels inside │ ├── 📁 context/ # Auth and XP management │ └── App.jsx ├── tailwind.config.js ├── package.json └── README.md
 
 ---
 
