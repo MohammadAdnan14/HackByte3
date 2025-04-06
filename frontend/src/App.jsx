@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Landing from './components/Landing';
 import Signin from './signin/Signin';
 import Dashboard from './components/Dashboard';
+import LLMOutput from './components/LLMOutput';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path='/llm' element={<LLMOutput />} />
       </Routes>
     </div>
   );
