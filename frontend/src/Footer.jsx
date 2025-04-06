@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="bg-[#1a1a35] w-full border-t border-[#3b4782]">
+        <div className="bg-[#2c3e50] w-full border-t border-[#ecf0f1]">
             <div className="max-w-7xl mx-auto px-6 py-12">
                 <Content />
             </div>
@@ -25,8 +25,8 @@ const Section1 = () => {
         <div className="text-white pb-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div className="md:col-span-2">
-                    <h2 className="text-3xl font-bold mb-4 text-yellow-400">WikiQuest</h2>
-                    <p className="text-[#d1d1d1]">
+                    <h2 className="text-3xl font-bold mb-4 text-[#3498db]">WikiCraft</h2>
+                    <p className="text-[#bdc3c7]">
                         Gamifying Wikipedia editor onboarding through interactive challenges, 
                         AI-powered feedback, and reward systems to create confident contributors.
                     </p>
@@ -73,7 +73,7 @@ const NavColumn = ({ title, links }) => {
                         href={link.to} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-[#d1d1d1] hover:text-yellow-400 transition-colors"
+                        className="text-[#bdc3c7] hover:text-[#3498db] transition-colors"
                     >
                         {link.text}
                     </a>
@@ -81,7 +81,7 @@ const NavColumn = ({ title, links }) => {
                     <Link 
                         key={index}
                         to={link.to} 
-                        className="text-[#d1d1d1] hover:text-yellow-400 transition-colors"
+                        className="text-[#bdc3c7] hover:text-[#3498db] transition-colors"
                     >
                         {link.text}
                     </Link>
@@ -93,12 +93,12 @@ const NavColumn = ({ title, links }) => {
 
 const Section2 = () => {
     return (
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#3b4782] text-[#d1d1d1] text-sm">
-            <p>© {new Date().getFullYear()} WikiQuest. All rights reserved.</p>
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#34495e] text-[#bdc3c7] text-sm">
+            <p>© {new Date().getFullYear()} WikiCraft. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-                <Link to="/privacy" className="hover:text-yellow-400 transition-colors">Privacy Policy</Link>
-                <Link to="/terms" className="hover:text-yellow-400 transition-colors">Terms of Service</Link>
-                <Link to="/contact" className="hover:text-yellow-400 transition-colors">Contact Us</Link>
+                <Link to="/privacy" className="hover:text-[#3498db] transition-colors">Privacy Policy</Link>
+                <Link to="/terms" className="hover:text-[#3498db] transition-colors">Terms of Service</Link>
+                <Link to="/contact" className="hover:text-[#3498db] transition-colors">Contact Us</Link>
             </div>
         </div>
     );
