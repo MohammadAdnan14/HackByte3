@@ -86,19 +86,19 @@ const ExamPage = () => {
   const current = questions[currentQuestion];
 
   return (
-    <div className="min-h-screen bg-yellow-50 flex items-center justify-center p-4">
-      <div className="max-w-xl w-full bg-white rounded-2xl shadow-xl p-6 space-y-4">
+    <div className="h-screen bg-yellow-50 flex items-center justify-center p-4">
+      <div className="w-[70vw] h-[70vh] bg-white rounded-2xl shadow-xl p-6 space-y-4">
         <div className="flex justify-between items-center">
           <div className="text-lg font-medium">❤️ {hearts}</div>
-          <div className="text-sm font-medium">Question {currentQuestion + 1} / {questions.length}</div>
+          <div className="text-lg font-bold">Question {currentQuestion + 1} / {questions.length}</div>
         </div>
-        <h2 className="text-xl font-bold">{current.question}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <h2 className="text-3xl font-bold mb-10">{current.question}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {current.options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleOptionClick(option)}
-              className={`px-4 py-2 rounded-xl border text-left transition-all duration-150 ${
+              className={`px-6 py-6 rounded-xl border text-left transition-all duration-150 ${
                 selectedOption === option
                   ? 'bg-blue-500 text-white border-blue-500'
                   : 'bg-gray-100 hover:bg-blue-100 border-gray-300'

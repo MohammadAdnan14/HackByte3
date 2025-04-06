@@ -6,6 +6,7 @@ import App from './App.jsx';
 import Dashboard from './components/Dashboard.jsx';
 import UnitPage from './components/UnitPage.jsx';
 import ExamPage from './data/ExamPage.jsx';
+import LLMOutput from './components/LLMOutput.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: '*',
     element: <div className="p-10 text-red-500 font-bold text-xl">404 - Page Not Found</div>,
+  },
+  {
+    path: '/llm',
+    element: <LLMOutput />,
   },
 ]);
 

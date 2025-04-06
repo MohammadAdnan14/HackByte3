@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import morningImage from "../assets/morning.jpg";
 import afternoonImage from "../assets/afternoon.jpg";
 import nightImage from "../assets/night.jpg";
@@ -52,7 +53,7 @@ const Dashboard = () => {
                 <nav className="flex top-0 sticky flex-col justify-start w-80 h-[100vh] text-white border-r-1">
                     
                     <div className="flex flex-col items-center justify-center gap-10">
-                        <p className="text-4xl font-bold mt-14 tracking-wider">WikiCraft ✨</p>
+                        <p className="text-4xl font-bold mt-14 tracking-wider"><Link to={"/"}>WikiCraft ✨</Link></p>
                         <div className="size-48">
                             <img className="rounded-full mt-16" src={userAvatar} alt="User Avatar" />
                         </div>
