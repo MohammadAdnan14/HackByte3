@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../Footer";
+import Footer from "./Footer";
 
 const Landing = () => {
     return (
         <div className="flex flex-col text-white">
             <div className="top-0 left-0 sticky w-full h-20 flex justify-between items-center bg-[#1a1a35] border-b border-[#3b4782]">
-                <p className="text-3xl ml-10 font-medium">wikipedia</p>
+                <p className="text-3xl ml-10 font-medium">Wiki-Craft</p>
 
                 <div className="flex items-center justify-center">
                     <ul className="flex gap-10 text-xl">
@@ -18,7 +18,7 @@ const Landing = () => {
                 </div>
 
                 <div>
-                    <button className="h-12 w-32 text-xl mr-10 bg-[#31314f] cursor-pointer"><Link to={"/signin"}>Get Started</Link></button>
+                    <button className="h-12 w-32 text-xl mr-10 bg-[#31314f] cursor-pointer"><Link to={"/dashboard"}>Get Started</Link></button>
                 </div>
             </div>
 
